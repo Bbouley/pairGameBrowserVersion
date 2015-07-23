@@ -73,8 +73,6 @@ function dealHand(array, num){
   //returns hand
 }
 
-console.log(dealHand(deck, 2));
-
 //checks to see if that hand contains a pair
 function containsPair(array){
   var pair = false;
@@ -98,9 +96,10 @@ function containsPair(array){
 function displayHand(array){
   var arrayHand = [];
     for(var i=0;i<array.length;i++){
-      arrayHand.push(array[i].code);
-  } return arrayHand;
+      arrayHand.push(array[i].name);
+  } console.log(arrayHand);
 }
+
 
 
 
@@ -133,15 +132,10 @@ function loseMessage(){
   }
 }
 
-function playGame(numCards){
-  hand = dealHand(deck, numCards);
-  return displayHand(hand);
+function playGame (numOfCards){
+  var hand = dealHand(deck,numOfCards);
+  displayHand(hand);
+  scoreHand(hand);
 }
 
-// playGame(2);
-//   scoreHand(hand);
-// }
-
-// playGame(4);
-
-// displayHand()
+playGame(6);
